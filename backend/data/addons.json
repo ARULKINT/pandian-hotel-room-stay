@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pickup",
+    "name": "Railway Station / Bus Stand Pickup",
+    "description": "Shared auto pickup on request — just share your arrival time in advance.",
+    "price": 300,
+    "unit": "per stay",
+    "popular": false
+  },
+  {
+    "id": "massage",
+    "name": "Ayurveda Massage",
+    "description": "45-minute traditional Kerala-style oil massage, per person.",
+    "price": 800,
+    "unit": "per stay",
+    "popular": true
+  },
+  {
+    "id": "welcome",
+    "name": "Filter Coffee & Banana Chips Welcome",
+    "description": "Hot filter coffee and crispy banana chips, ready in your room on arrival.",
+    "price": 100,
+    "unit": "per stay",
+    "popular": false
+  },
+  {
+    "id": "breakfast",
+    "name": "Add Breakfast for Two",
+    "description": "Unlimited South Indian breakfast — idli, dosa, vada and filter coffee.",
+    "price": 250,
+    "unit": "per night",
+    "popular": true
+  },
+  {
+    "id": "extrabed",
+    "name": "Extra Mattress",
+    "description": "Additional mattress with fresh bedding. Free for children under 8.",
+    "price": 400,
+    "unit": "per night",
+    "popular": false
+  }
+]

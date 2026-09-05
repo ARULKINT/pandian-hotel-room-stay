@@ -1,0 +1,134 @@
+[
+  {
+    "id": "standard-non-ac",
+    "name": "Standard Non-AC Room",
+    "type": "non-ac",
+    "category": "Budget",
+    "description": "Simple, clean and budget-friendly room with a comfortable double bed — perfect for solo travellers and short halts.",
+    "price": 899,
+    "image": "/images/southindia/hotel-room-3.jpg",
+    "gallery": [
+      "/images/southindia/hotel-room-3.jpg",
+      "/images/southindia/filter-coffee.jpg",
+      "/images/southindia/dosa-idli-sambar.jpg"
+    ],
+    "amenities": ["Non-AC", "TV", "Attached Bathroom", "24-Hour Hot Water"],
+    "maxGuests": 2,
+    "bedType": "Double Bed",
+    "sizeSqft": 140,
+    "floor": "Ground Floor",
+    "totalUnits": 10,
+    "rating": 4.3,
+    "reviewCount": 86
+  },
+  {
+    "id": "standard-ac",
+    "name": "Standard AC Room",
+    "type": "ac",
+    "category": "Standard",
+    "description": "Neat AC room with all the basics done properly — good for a short business trip or an overnight halt.",
+    "price": 1299,
+    "image": "/images/southindia/room-family.jpg",
+    "gallery": [
+      "/images/southindia/room-family.jpg",
+      "/images/southindia/filter-coffee.jpg",
+      "/images/southindia/gopuram-temple.jpg"
+    ],
+    "amenities": ["AC", "Free WiFi", "TV", "Attached Bathroom"],
+    "maxGuests": 2,
+    "bedType": "Double Bed",
+    "sizeSqft": 160,
+    "floor": "First Floor",
+    "totalUnits": 12,
+    "rating": 4.5,
+    "reviewCount": 142
+  },
+  {
+    "id": "deluxe-ac",
+    "name": "Deluxe AC Room",
+    "type": "ac",
+    "category": "Deluxe",
+    "description": "Our most popular room — comfortable AC, complimentary filter coffee, and a little more space to spread out.",
+    "price": 1499,
+    "image": "/images/southindia/hotel-room-2.jpg",
+    "gallery": [
+      "/images/southindia/hotel-room-2.jpg",
+      "/images/southindia/filter-coffee.jpg",
+      "/images/southindia/gopuram-temple.jpg",
+      "/images/southindia/dosa-idli-sambar.jpg"
+    ],
+    "amenities": ["AC", "Free WiFi", "Complimentary Filter Coffee", "Attached Bathroom"],
+    "maxGuests": 3,
+    "bedType": "Double Bed + Extra Bed",
+    "sizeSqft": 180,
+    "floor": "First Floor",
+    "totalUnits": 8,
+    "rating": 4.6,
+    "reviewCount": 128
+  },
+  {
+    "id": "executive-ac",
+    "name": "Executive AC Room",
+    "type": "ac",
+    "category": "Executive",
+    "description": "Bigger room with a work desk and garden-facing window. Complimentary breakfast included for two.",
+    "price": 1899,
+    "image": "/images/southindia/room-standard.jpg",
+    "gallery": [
+      "/images/southindia/room-standard.jpg",
+      "/images/southindia/dosa-idli-sambar.jpg",
+      "/images/southindia/filter-coffee.jpg"
+    ],
+    "amenities": ["AC", "Free WiFi", "Work Desk", "Breakfast Included", "Garden View"],
+    "maxGuests": 3,
+    "bedType": "King Bed",
+    "sizeSqft": 220,
+    "floor": "Second Floor",
+    "totalUnits": 6,
+    "rating": 4.7,
+    "reviewCount": 74
+  },
+  {
+    "id": "family-ac",
+    "name": "Family AC Room",
+    "type": "ac",
+    "category": "Family",
+    "description": "Spacious room for the whole family with two double beds. Extra mattress available on request, no extra charge for kids under 8.",
+    "price": 2199,
+    "image": "/images/southindia/room-executive.jpg",
+    "gallery": [
+      "/images/southindia/room-executive.jpg",
+      "/images/southindia/dosa-idli-sambar.jpg",
+      "/images/southindia/hotel-lobby.jpg"
+    ],
+    "amenities": ["AC", "Free WiFi", "2 Double Beds", "Breakfast Included", "Attached Bathroom"],
+    "maxGuests": 5,
+    "bedType": "2 Double Beds",
+    "sizeSqft": 300,
+    "floor": "Second Floor",
+    "totalUnits": 4,
+    "rating": 4.6,
+    "reviewCount": 59
+  },
+  {
+    "id": "budget-single",
+    "name": "Budget Single Room",
+    "type": "non-ac",
+    "category": "Budget",
+    "description": "Compact single room with all the essentials. The most economical way to stay with us.",
+    "price": 649,
+    "image": "/images/southindia/hotel-room-3.jpg",
+    "gallery": [
+      "/images/southindia/hotel-room-3.jpg",
+      "/images/southindia/filter-coffee.jpg"
+    ],
+    "amenities": ["Non-AC", "Single Bed", "Attached Bathroom", "24-Hour Hot Water"],
+    "maxGuests": 1,
+    "bedType": "Single Bed",
+    "sizeSqft": 100,
+    "floor": "Ground Floor",
+    "totalUnits": 6,
+    "rating": 4.1,
+    "reviewCount": 47
+  }
+]

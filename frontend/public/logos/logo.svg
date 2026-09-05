@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 54" fill="none">
+  <!-- Minimalist royal architectural crown/temple emblem inspired by heritage Pandian dynasty -->
+  <path d="M26 12L15 36H37L26 12Z" stroke="#B58A4A" stroke-width="1.5" stroke-linejoin="round"/>
+  <circle cx="26" cy="26" r="5" stroke="#171717" stroke-width="1.2"/>
+  <path d="M26 8V12M26 36V40M11 26H15M37 26H41" stroke="#B58A4A" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Typography -->
+  <text x="50" y="27" font-family="'Playfair Display', serif" font-size="17" font-weight="600" letter-spacing="0.12em" fill="#171717">PANDIAN</text>
+  <text x="51" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="500" letter-spacing="0.22em" fill="#6F6F6A">HOTEL &amp; ROOM STAY</text>
+</svg>

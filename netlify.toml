@@ -1,0 +1,25 @@
+# Netlify build config for the frontend. Netlify auto-detects this at the
+# repo root even though the actual app lives in frontend/ (see `base`).
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# This is a hash-router SPA (#/home, #/rooms, ...) — the browser never asks
+# the server for those paths, only for "/" and static assets, so no SPA
+# catch-all redirect is actually required. Kept anyway as a harmless safety
+# net in case a route is ever changed to real (non-hash) paths later.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

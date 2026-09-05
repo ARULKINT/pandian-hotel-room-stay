@@ -1,0 +1,27 @@
+# Render Blueprint — lets Render auto-configure the backend web service
+# from this file when you connect the repo ("New +" -> "Blueprint").
+# You can also skip this file entirely and configure the same settings by
+# hand in the Render dashboard; see deploy/README.md for both paths.
+services:
+  - type: web
+    name: pandian-hotel-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+    envVars:
+      # Set for real in the Render dashboard after this deploys once —
+      # never commit real values here. sync:false means "Render will ask
+      # you to fill this in", it won't invent a value.
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: PORT
+        value: 3000
+      # A free Neon/Supabase Postgres connection string. Without this,
+      # bookings fall back to a JSON file that Render's free tier wipes on
+      # every redeploy — see deploy/README.md step 2.
+      - key: DATABASE_URL
+        sync: false

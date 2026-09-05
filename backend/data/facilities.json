@@ -1,0 +1,74 @@
+[
+  {
+    "id": "restaurant",
+    "name": "Pure Veg Multi-Cuisine Restaurant",
+    "category": "Meals",
+    "icon": "restaurant",
+    "image": "/images/southindia/dosa-idli-sambar.jpg",
+    "summary": "Idli, dosa & South Indian meals — plus North Indian and Chinese on the menu.",
+    "description": "Our ground-floor restaurant serves fresh South Indian breakfast from 7:00 AM, unlimited meals at lunch, and à la carte dinner. Pure vegetarian kitchen. Room service available till 11:00 PM.",
+    "timings": "07:00 AM – 11:00 PM",
+    "location": "Ground Floor",
+    "highlights": ["Unlimited meals ₹180", "Room service available", "Jain & no-onion-garlic on request"]
+  },
+  {
+    "id": "coffee",
+    "name": "Filter Coffee Corner",
+    "category": "Refreshments",
+    "icon": "local_cafe",
+    "image": "/images/southindia/filter-coffee.jpg",
+    "summary": "Complimentary hot filter coffee, morning and evening.",
+    "description": "Freshly brewed degree coffee served in the traditional davara-tumbler, complimentary for all in-house guests. Tea, badam milk and buttermilk also available through the day.",
+    "timings": "06:00 AM – 10:00 AM, 04:00 PM – 07:00 PM",
+    "location": "Lobby",
+    "highlights": ["Complimentary for guests", "Traditional degree coffee", "Tea & buttermilk also served"]
+  },
+  {
+    "id": "ayurveda",
+    "name": "Ayurveda Massage Centre",
+    "category": "Wellness",
+    "icon": "spa",
+    "image": "/images/southindia/ayurveda-spa.jpg",
+    "summary": "Traditional Kerala-style oil massage, available on request.",
+    "description": "Trained therapists offer traditional abhyanga oil massage and head massage. Advance booking recommended — please inform the front desk at least 2 hours ahead.",
+    "timings": "09:00 AM – 08:00 PM",
+    "location": "Second Floor",
+    "highlights": ["45-min oil massage ₹800", "Head massage ₹400", "Advance booking needed"]
+  },
+  {
+    "id": "parking",
+    "name": "Free Parking",
+    "category": "Convenience",
+    "icon": "local_parking",
+    "image": "/images/southindia/hotel-lobby.jpg",
+    "summary": "Free covered parking for cars and two-wheelers.",
+    "description": "Covered parking available on-site at no extra charge, with 24-hour security. Please collect a parking token from the front desk on arrival.",
+    "timings": "24 Hours",
+    "location": "Behind the building",
+    "highlights": ["No charge", "24-hour security", "Two-wheeler parking available"]
+  },
+  {
+    "id": "frontdesk",
+    "name": "24-Hour Front Desk",
+    "category": "Service",
+    "icon": "support_agent",
+    "image": "/images/southindia/hotel-lobby.jpg",
+    "summary": "Someone at the desk round the clock, for anything you need.",
+    "description": "Our front desk runs 24 hours for check-in, luggage storage, taxi bookings, railway station pickup and local sightseeing help. Just call extension 9 from your room.",
+    "timings": "24 Hours",
+    "location": "Lobby",
+    "highlights": ["Luggage storage", "Taxi & auto booking", "Local sightseeing help"]
+  },
+  {
+    "id": "laundry",
+    "name": "Laundry & Ironing",
+    "category": "Convenience",
+    "icon": "local_laundry_service",
+    "image": "/images/southindia/hotel-lobby.jpg",
+    "summary": "Same-day laundry if given before 9 AM.",
+    "description": "Washing and ironing service charged per piece. Clothes given before 9:00 AM are returned the same evening. Express service available at 1.5x charge.",
+    "timings": "08:00 AM – 06:00 PM",
+    "location": "Ground Floor",
+    "highlights": ["Same-day return", "Ironing ₹20/piece", "Express service available"]
+  }
+]

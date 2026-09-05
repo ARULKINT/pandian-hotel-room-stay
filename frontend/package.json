@@ -1,0 +1,14 @@
+{
+  "name": "hotel-ecom",
+  "version": "1.0.0",
+  "description": "Pandian Hotel & Room Stay Booking Web App",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
