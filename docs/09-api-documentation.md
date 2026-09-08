@@ -2,10 +2,12 @@
 
 ## 9.1 Overview
 
-- **Base URL**: `http://localhost:3000` locally; the deployed Render URL in production (injected into the frontend at build time via `VITE_API_BASE_URL`)
+- **Base URL**: `http://localhost:3000` locally; `https://pandian-hotel-room-stay.onrender.com` in the current production deployment (injected into the frontend at build time via `VITE_API_BASE_URL` — see [18-deployment.md](18-deployment.md))
 - **Format**: JSON request/response bodies throughout (`express.json()`)
+- **Request headers**: `Content-Type: application/json` on every request with a body; `Authorization: Bearer <token>` additionally required on the routes marked "Yes"/"Conditional" in §9.2 (see §9.3 auth scheme below). No other custom headers are read by any route.
+- **Response headers**: standard Express/CORS defaults (`Content-Type: application/json`, `Access-Control-Allow-Origin` reflecting `CORS_ORIGIN`) — no custom response headers (e.g. rate-limit counters, request IDs) are set.
 - **Auth scheme**: Bearer token in the `Authorization` header (`Authorization: Bearer <token>`), issued by `/api/admin/login`
-- **CORS**: controlled by the `CORS_ORIGIN` environment variable (`*` or a specific frontend origin)
+- **CORS**: controlled by the `CORS_ORIGIN` environment variable — currently locked to the production frontend's exact origin (see [14-authentication-security.md](14-authentication-security.md) §14.5)
 - **Error shape**: `{ "error": "human-readable message" }` on every non-2xx response
 
 ## 9.2 Endpoint Summary

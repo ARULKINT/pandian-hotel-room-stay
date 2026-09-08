@@ -5,10 +5,10 @@
 | Environment | Frontend | Backend | Database |
 |---|---|---|---|
 | **Local development** | Vite dev server, `http://localhost:5173` | `node server.js`, `http://localhost:3000` | `backend/data/bookings.json` (no `DATABASE_URL` needed) |
-| **Production (free tier, current target)** | Netlify static hosting | Render free web service | Neon free Postgres (recommended) or the same JSON-file fallback (data at risk of loss on redeploy) |
-| **Alternative: single VPS** | Same origin as backend, served by nginx | PM2-managed Node process | Either mode | — see `deploy/vps-alternative/` (archived, not the current recommended path) |
+| **Production (current, live)** | Netlify: `https://eloquent-blancmange-9d37ea.netlify.app` | Render: `https://pandian-hotel-room-stay.onrender.com` | Neon Postgres (`DATABASE_URL` configured — bookings persist across redeploys) |
+| **Alternative: single VPS** | Same origin as backend, served by nginx | PM2-managed Node process | Either mode — see `deploy/vps-alternative/` (archived, not the current recommended path) |
 
-There is no separate staging environment configured; the deployment runbook treats "production" as the only non-local target.
+There is no separate staging environment configured; the deployment runbook treats "production" as the only non-local target. The Netlify site name (`eloquent-blancmange-9d37ea`) is Netlify's auto-generated default — it was not renamed at deploy time; renaming it is a cosmetic change available in the Netlify dashboard at any time without affecting functionality.
 
 ## 18.2 Build Process
 
