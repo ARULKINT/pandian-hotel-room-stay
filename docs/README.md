@@ -4,6 +4,17 @@ Complete technical and product documentation for the Pandian Hotel & Room Stay b
 
 This documentation was produced by reading the actual source code, exercising the running application (both tiers, locally), and verifying every screen and API route described — not written speculatively. Where something is not implemented, that is stated explicitly rather than omitted.
 
+## At a Glance
+
+| | |
+|---|---|
+| **Project status** | Functionally complete for a single-property hotel; payment is simulated (not a real gateway) — see [24-known-issues.md](24-known-issues.md) |
+| **Live deployment** | Frontend: `https://eloquent-blancmange-9d37ea.netlify.app` · Backend: `https://pandian-hotel-room-stay.onrender.com` · Repo: `github.com/ARULKINT/pandian-hotel-room-stay` |
+| **Technology summary** | Vanilla JS SPA (Vite + Tailwind CDN) frontend; Express.js backend; Postgres (Neon) or local JSON-file bookings storage — see [04-technology-stack.md](04-technology-stack.md) |
+| **Architecture summary** | Two independently-hosted tiers communicating over HTTPS/CORS — see the diagrams in [03-system-architecture.md](03-system-architecture.md) |
+| **Important diagrams** | High-level architecture, request lifecycle, and auth flow: [03-system-architecture.md](03-system-architecture.md) · ER diagram: [10-database-documentation.md](10-database-documentation.md) · Workflows: [07-user-workflows.md](07-user-workflows.md) |
+| **Last documentation update** | 2026-09-08 |
+
 ## How to Use This Documentation
 
 | I am a... | Start here |
@@ -107,25 +118,60 @@ This documentation was produced by reading the actual source code, exercising th
 | `addons.json` | Static file | `id` | 5 add-ons |
 | `bookings` | Postgres `JSONB` table **or** `bookings.json` file | `id` | Mode selected by `DATABASE_URL` presence |
 
+### Components
+
+| Component | Purpose | Location |
+|---|---|---|
+| `header()` | Fixed top bar — logo/title, back button, account link | `frontend/src/components/layout.js` |
+| `bottomNav()` | Fixed 4-tab bottom navigation | `frontend/src/components/layout.js` |
+| `emptyState()` / `loading()` | Shared empty/loading placeholders used on every async page | `frontend/src/components/layout.js` |
+| `toastMarkup()` / `showToast()` | Single reusable toast notification | `frontend/src/components/layout.js` |
+| `roomCard()` / `mountRoomCards()` | Shared room-card markup + event wiring | `frontend/src/components/roomCard.js` |
+| `steps()` | 3-step Checkout/Payment progress indicator | `frontend/src/pages/Checkout.js` (exported, reused by `Payment.js`) |
+| `store.js` | Bookings persistence abstraction (Postgres or JSON file) | `backend/store.js` |
+| `requireAdmin` middleware | Server-side auth gate for staff-only routes | `backend/server.js` |
+| `buildQuote()` | Single pricing function (room + add-ons + GST + discount) | `backend/server.js` |
+
 ### Configuration
 
-| Variable | Required | Purpose |
-|---|---|---|
-| `ADMIN_PASSWORD` | Recommended | Staff sign-in password |
-| `PORT` | No | Backend port (default 3000) |
-| `CORS_ORIGIN` | Recommended in prod | Allowed frontend origin |
-| `DATABASE_URL` | Recommended in prod | Postgres connection string |
-| `VITE_API_BASE_URL` | Required in prod | Backend URL, baked in at frontend build time |
+| Variable | Purpose | Required | Sensitive |
+|---|---|---|---|
+| `ADMIN_PASSWORD` | Staff sign-in password | Recommended (else a random one is generated per boot) | Yes |
+| `PORT` | Backend listen port | No (defaults to 3000) | No |
+| `CORS_ORIGIN` | Allowed frontend origin | Recommended in production | No |
+| `DATABASE_URL` | Postgres connection string | Recommended in production | Yes |
+| `VITE_API_BASE_URL` | Backend URL, baked into the frontend at build time | Required in production | No |
 
 ### Dependencies
 
-| Package | Where | Purpose |
+| Package | Version | Purpose |
 |---|---|---|
-| express | backend | HTTP server/routing |
-| cors | backend | Cross-origin control |
-| pg | backend | Postgres driver |
-| vite | frontend | Build/dev server |
-| concurrently | root | Run both dev servers together |
+| express | ^5.2.1 | HTTP server/routing (backend) |
+| cors | ^2.8.6 | Cross-origin control (backend) |
+| pg | ^8.13.1 | Postgres driver (backend) |
+| vite | ^5.0.0 | Build/dev server (frontend) |
+| concurrently | ^8.2.2 | Runs both dev servers together (root) |
+
+### Integrations
+
+| Service | Purpose | Data Exchanged |
+|---|---|---|
+| Neon (Postgres) | Durable bookings storage | Full booking documents (JSONB) over a TLS connection string |
+| Render | Hosts the backend process | Full source deploy on every push |
+| Netlify | Hosts the built frontend | Built `dist/` output on every push |
+| GitHub | Source of truth, deploy trigger | Full repository contents |
+| Google Fonts / Tailwind CDN | Typography, icons, CSS framework | Font files and CSS, loaded client-side |
+
+No payment gateway, email/SMS provider, analytics, or AI/ML service is integrated — see [16-integrations.md](16-integrations.md) §16.5.
+
+### Test Coverage
+
+| Area | Existing Tests | Gaps |
+|---|---|---|
+| Backend API / business logic | None | Pricing/GST, availability overlap, auth ordering, race-condition handling — all untested (see [17-testing.md](17-testing.md) for the recommended backlog) |
+| Frontend UI / state | None | Draft sanitisation, compare-list cap, guard states — all untested |
+| End-to-end booking flow | None | Full journey (browse → book → cancel) — untested |
+| Manual verification | Performed during development and this documentation pass | Not repeatable/automated |
 
 ## Documentation Completeness Audit
 
